@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Game Academy</title>
+    <link rel="icon" href="https://cws.auckland.ac.nz/gas/api/LogoColoured?colour=white">
+    <link rel ="stylesheet" href = "imia307.css"/>
+
+</head>
+
+<body>
+    <button class="tablink" onclick="openPage('Home', this)" id="defaultOpen">🏠</button>
+    <button class="tablink" onclick="openPage('AcademyShop', this)" id ="shop">🛒</button>
+    <button class="tablink" onclick="openPage('UserRegistration', this)" id ="register">✍</button>
+    <button class="tablink" onclick="openPage('UserLogin', this)" id="Login">👩</button>
+    <button class="tablink" onclick="openPage('GameOfChess', this)" id ="chess">♚</button>
+    <button class="tablink" onclick="openPage('GuestBook', this)" id ="guest">📖</button>
+
+    <div id="Home" class="tabcontent">
+        <button class = "logoutbtn" onclick ="logout()" style="visibility: hidden" id="logOut">Logout</button>
+        <p class = "logintextclass" style="visibility: hidden" id="loginText"></p>
+        <h1 id="WelcomeHome">The Game Academy</h1>
+        <img id = "homelogo" alt="Logo" src="https://cws.auckland.ac.nz/gas/api/LogoColoured?colour=black"/>
+        <!--<img id = "chessimage" alt="chesspic" src="https://cws.auckland.ac.nz/gas/api/ItemPhoto/5341529830"/>-->
+        <p id="hometext">
+            Welcome to The Game Academy We are a world class entertainment company. 
+            We have an array of games available to purchase on our website to suit everyones needs. We also have the option to play chess online 
+            by registering and logging in. Feel free to leave a comment in our comments section and view what other people have to say about us aswell.
+            <br><br>🙈 We are open 24/7 as our employees are paid absolutely nothing and are forced to work by us so we dont need to worry about paying them
+            and we can use that money instead to offer our customers better services.
+            <br><br> 🎮 If you would like to return your products well then thats too bad stupid ass mf AHHAHAHA LMFAOOO NO RETURNS NOOB
+            <br><br> ☎ If you would like to contact us call 0800 83 83 83 and order a pizza instead because we don't care LOL.
+
+        </p>
+       
+        <footer>
+            <p id = "versionfooter">Version 1.0.1</p>
+        </footer>
+    </div>
+    
+    <div id="AcademyShop" class="tabcontent">
+        <button class = "logoutbtn" onclick ="logout()" style="visibility: hidden" id="logOut2">Logout</button>
+        <p class = "logintextclass" style="visibility: hidden" id="loginText2"></p>
+        <h3>The Academy Shop</h3>
+        <input type ="text" name = "searchBar" id = "searchBar" placeholder="Search For Items">
+        <table id="store"></table>
+        <div id="popupdiv" class="popup">
+            <div class="popupContent">
+              <span class="close">&times;</span>
+              <p id = "popuptext"></p>
+            </div>  
+        </div>
+    </div>
+    
+    <div id="UserRegistration" class="tabcontent">
+        <button class = "logoutbtn" onclick ="logout()" style="visibility: hidden" id="logOut3">Logout</button>
+        <p class = "logintextclass" style="visibility: hidden" id="loginText3"></p>
+        <h1>Register Here</h1>
+        <form id = "formRegister" method = "post" onsubmit="return register()">
+            <div class="txtfield">
+                <input placeholder="username" type="username" id = "usernameregister" required>
+            </div>
+            <div class="txtfield">
+                <input placeholder="password" type="password" id = "passwordregister" required>
+            </div>
+            <div class="txtfield">
+                <input placeholder="address" type="address" id = "addressregister">
+            </div>
+            <input type = "submit" value = "Register">
+        </form>
+    </div>
+    <!-- 
+    <div id="UserLogin" class="tabcontent">
+        <button class = "logoutbtn" onclick ="logout()" style="visibility: hidden" id="logOut4">Logout</button>
+        <p class = "logintextclass" style="visibility: hidden" id="loginText4"></p>
+        <h1>Login Here</h1>
+        <form id = "form" method = "post" onsubmit="return version()">
+            <div class="txtfield">
+                <input type="username" id = "username" required>
+                <span></span>
+                <label>Username</label>
+            </div>
+            <div class="txtfield">
+                <input type="password" id = "password" required>
+                <span></span>
+                <label>Password</label>
+            </div>
+            <input type = "submit" value = "Login">
+        </form>
+        <p id="status"></p>
+    </div>-->
+
+    <div id="UserLogin" class="tabcontent">
+        <button class = "logoutbtn" onclick ="logout()" style="visibility: hidden" id="logOut4">Logout</button>
+        <p class = "logintextclass" style="visibility: hidden" id="loginText4"></p>
+        <h1>Login Here</h1>
+        <form id = "form" method = "post" onsubmit="return version()">
+            <div class="txtfield">
+                <input type="username" placeholder="username" id = "username" required>
+            </div>
+            <div class="txtfield">
+                <input type="password" placeholder="password" id = "password" required>
+            </div>
+            <input type = "submit" value = "Login">
+        </form>
+        <p id="status"></p>
+    </div>
+
+    <div id="GameOfChess" class="tabcontent">
+        <button class = "logoutbtn" onclick ="logout()" style="visibility: hidden" id="logOut5">Logout</button>
+        <p class = "logintextclass" style="visibility: hidden" id="loginText5"></p>
+        <table class = "chesstable" align = "center" width = "660" height = "640" border = "1">
+            <tr>
+                <td id = "topcastling" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" class ="chessborder" width = "64" height = "64" bgcolor="grey"></td>
+                <td class ="chessborder" width = "64" height = "64" bgcolor="grey">a</td>
+                <td class ="chessborder" width = "64" height = "64" bgcolor="grey">b</td>
+                <td class ="chessborder" width = "64" height = "64" bgcolor="grey">c</td>
+                <td class ="chessborder" width = "64" height = "64" bgcolor="grey">d</td>
+                <td class ="chessborder" width = "64" height = "64" bgcolor="grey">e</td>
+                <td class ="chessborder" width = "64" height = "64" bgcolor="grey">f</td>
+                <td class ="chessborder" width = "64" height = "64" bgcolor="grey">g</td>
+                <td class ="chessborder" width = "64" height = "64" bgcolor="grey">h</td>
+                <td ondrop="removePiece(event)" ondragover ="dragoverfunction(event)" class ="chessborder" width = "64" height = "64" bgcolor="grey"><img src = https://cws.auckland.ac.nz/gas/images/Bin.svg></td>
+            </tr>
+            <tr>
+                <td class ="chessborder" width = "64" height = "64" bgcolor="grey">1</td>
+                <td id = "a1" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "64" height = "64" bgcolor="white"><img class ="chesspiece" id= "BRookLeft" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Rb.svg"></td>
+                <td id = "b1" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "64" height = "64" bgcolor="#4cc2ea"><img class ="chesspiece" id= "BKnightLeft" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Nb.svg"></td>
+                <td id = "c1" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "64" height = "64" bgcolor="white"><img class ="chesspiece" id= "BBishopLeft" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Bb.svg"></td>
+                <td id = "d1" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "64" height = "64" bgcolor="#4cc2ea"><img class ="chesspiece" id= "BQueen1" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Qb.svg"></td>
+                <td id = "e1" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "64" height = "64" bgcolor="white"><img class ="chesspiece" id= "BKing" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Kb.svg"></td>
+                <td id = "f1" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "64" height = "64" bgcolor="#4cc2ea"><img class ="chesspiece" id= "BBishopRight" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Bb.svg"></td>
+                <td id = "g1" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "64" height = "64" bgcolor="white"><img class ="chesspiece" id= "BKnightRight" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Nb.svg"></td>
+                <td id = "h1" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "64" height = "64" bgcolor="#4cc2ea"><img class ="chesspiece" id= "BRookRight" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Rb.svg"></td>
+                <td class ="chessborder" width = "64" height = "64" bgcolor="grey"><img class ="chesspiece" id= "BQueen2" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Qb.svg"></td>
+            </tr>
+            <tr>
+                <td class ="chessborder" width = "64" height = "64" bgcolor="grey">2</td>
+                <td id = "a2" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "64" height = "64" bgcolor="#4cc2ea"><img class ="chesspiece" id= "BPawn1" ondragstart="dragstartfunction(event)" src="https://cws.auckland.ac.nz/gas/images/Pb.svg"></td>
+                <td id = "b2" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "64" height = "64" bgcolor="white"><img class ="chesspiece" id= "BPawn2" ondragstart="dragstartfunction(event)" src="https://cws.auckland.ac.nz/gas/images/Pb.svg"></td>
+                <td id = "c2" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "64" height = "64" bgcolor="#4cc2ea"><img class ="chesspiece" id= "BPawn3" ondragstart="dragstartfunction(event)" src="https://cws.auckland.ac.nz/gas/images/Pb.svg"></td>
+                <td id = "d2" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "64" height = "64" bgcolor="white"><img class ="chesspiece" id= "BPawn4" ondragstart="dragstartfunction(event)" src="https://cws.auckland.ac.nz/gas/images/Pb.svg"></td>
+                <td id = "e2" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "64" height = "64" bgcolor="#4cc2ea"><img class ="chesspiece" id= "BPawn5" ondragstart="dragstartfunction(event)" src="https://cws.auckland.ac.nz/gas/images/Pb.svg"></td>
+                <td id = "f2" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "64" height = "64" bgcolor="white"><img class ="chesspiece" id= "BPawn6" ondragstart="dragstartfunction(event)" src="https://cws.auckland.ac.nz/gas/images/Pb.svg"></td>
+                <td id = "g2" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "64" height = "64" bgcolor="#4cc2ea"><img class ="chesspiece" id= "BPawn7" ondragstart="dragstartfunction(event)" src="https://cws.auckland.ac.nz/gas/images/Pb.svg"></td>
+                <td id = "h2" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "64" height = "64" bgcolor="white"><img class ="chesspiece" id= "BPawn8" ondragstart="dragstartfunction(event)" src="https://cws.auckland.ac.nz/gas/images/Pb.svg"></td>
+                <td class ="chessborder" width = "64" height = "64" bgcolor="grey"><img class ="chesspiece"  id= "BQueen3" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Qb.svg"></td>
+            </tr>
+            <tr>
+                <td class ="chessborder" bgcolor="grey">3</td>
+                <td id = "a3" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" bgcolor="white"></td>
+                <td id = "b3" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" bgcolor="#4cc2ea"></td>
+                <td id = "c3" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" bgcolor="white"></td>
+                <td id = "d3" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" bgcolor="#4cc2ea"></td>
+                <td id = "e3" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" bgcolor="white"></td>
+                <td id = "f3" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" bgcolor="#4cc2ea"></td>
+                <td id = "g3" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" bgcolor="white"></td>
+                <td id = "h3" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" bgcolor="#4cc2ea"></td>
+                <td class ="chessborder" bgcolor="grey"><img class ="chesspiece" id= "BQueen4" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Qb.svg"></td>
+            </tr>
+            <tr>
+                <td class ="chessborder" bgcolor="grey">4</td>
+                <td id = "a4" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" bgcolor="#4cc2ea"></td>
+                <td id = "b4" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" bgcolor="white"></td>
+                <td id = "c4" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" bgcolor="#4cc2ea"></td>
+                <td id = "d4" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" bgcolor="white"></td>
+                <td id = "e4" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" bgcolor="#4cc2ea"></td>
+                <td id = "f4" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" bgcolor="white"></td>
+                <td id = "g4" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" bgcolor="#4cc2ea"></td>
+                <td id = "h4" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" bgcolor="white"></td>
+                <td class ="chessborder" bgcolor="grey"><img class ="chesspiece" id= "BQueen5" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Qb.svg"></td>
+            </tr>
+            <tr>
+                <td class ="chessborder" bgcolor="grey">5</td>
+                <td id = "a5" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="white"></td>
+                <td id = "b5" class= "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="#4cc2ea"></td>
+                <td id = "c5" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="white"></td>
+                <td id = "d5" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="#4cc2ea"></td>
+                <td id = "e5" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="white"></td>
+                <td id = "f5" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="#4cc2ea"></td>
+                <td id = "g5" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="white"></td>
+                <td id = "h5" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="#4cc2ea"></td>
+                <td class ="chessborder" bgcolor="grey"><img class ="chesspiece"  id= "WQueen5" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Qw.svg"></td>
+            </tr>
+            <tr>
+                <td class ="chessborder" bgcolor="grey">6</td>
+                <td id = "a6" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="#4cc2ea"></td>
+                <td id = "b6" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="white"></td>
+                <td id = "c6" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="#4cc2ea"></td>
+                <td id = "d6" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="white"></td>
+                <td id = "e6" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="#4cc2ea"></td>
+                <td id = "f6" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="white"></td>
+                <td id = "g6" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="#4cc2ea"></td>
+                <td id = "h6" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="white"></td>
+                <td class ="chessborder" bgcolor="grey"><img class ="chesspiece" id= "WQueen4" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Qw.svg"></td>
+            </tr>
+            <tr>
+                <td class ="chessborder" bgcolor="grey">7</td>
+                <td id = "a7" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="white"><img class ="chesspiece" id= "WPawn1" ondragstart="dragstartfunction(event)" src="https://cws.auckland.ac.nz/gas/images/Pw.svg"></td>
+                <td id = "b7" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="#4cc2ea"><img class ="chesspiece" id= "WPawn2" ondragstart="dragstartfunction(event)" src="https://cws.auckland.ac.nz/gas/images/Pw.svg"></td>
+                <td id = "c7" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="white"><img class ="chesspiece" id= "WPawn3" ondragstart="dragstartfunction(event)" src="https://cws.auckland.ac.nz/gas/images/Pw.svg"></td>
+                <td id = "d7" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="#4cc2ea"><img class ="chesspiece" id= "WPawn4" ondragstart="dragstartfunction(event)" src="https://cws.auckland.ac.nz/gas/images/Pw.svg"></td>
+                <td id = "e7" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="white"><img class ="chesspiece" id= "WPawn5" ondragstart="dragstartfunction(event)" src="https://cws.auckland.ac.nz/gas/images/Pw.svg"></td>
+                <td id = "f7" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="#4cc2ea"><img class ="chesspiece" id= "WPawn6" ondragstart="dragstartfunction(event)" src="https://cws.auckland.ac.nz/gas/images/Pw.svg"></td>
+                <td id = "g7" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="white"><img class ="chesspiece" id= "WPawn7" ondragstart="dragstartfunction(event)" src="https://cws.auckland.ac.nz/gas/images/Pw.svg"></td>
+                <td id = "h7" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="#4cc2ea"><img class ="chesspiece" id= "WPawn8" ondragstart="dragstartfunction(event)" src="https://cws.auckland.ac.nz/gas/images/Pw.svg"></td>
+                <td class ="chessborder" bgcolor="grey"><img class ="chesspiece" id= "WQueen3" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Qw.svg"></td>
+            </tr>
+            <tr>
+                <td class ="chessborder" bgcolor="grey">8</td>
+                <td id = "a8" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="#4cc2ea"><img class ="chesspiece" id= "WRookLeft" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Rw.svg"></td>
+                <td id = "b8" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="white"><img class ="chesspiece" id= "WKnightLeft" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Nw.svg"></td>
+                <td id = "c8" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="#4cc2ea"><img class ="chesspiece" id= "WBishopLeft" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Bw.svg"></td>
+                <td id = "d8" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="white"><img class ="chesspiece" id= "WQueen1" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Qw.svg"></td>
+                <td id = "e8" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="#4cc2ea"><img class ="chesspiece" id= "WKing" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Kw.svg"></td>
+                <td id = "f8" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="white"><img class ="chesspiece" id= "WBishopRight" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Bw.svg"></td>
+                <td id = "g8" class = "colourtiles" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="#4cc2ea"><img class ="chesspiece" id= "WKnightRight" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Nw.svg"></td>
+                <td id = "h8" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" width = "80" height = "80" bgcolor="white"><img class ="chesspiece" id= "WRookRight" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Rw.svg"></td>
+                <td class ="chessborder" bgcolor="grey"><img class ="chesspiece" id= "WQueen2" ondragstart="dragstartfunction(event)" src ="https://cws.auckland.ac.nz/gas/images/Qw.svg"></td>
+            </tr>
+            <tr>
+                <td ondrop="removePiece(event)" ondragover ="dragoverfunction(event)" class ="chessborder" bgcolor="grey"><img src = https://cws.auckland.ac.nz/gas/images/Bin.svg></td>
+                <td class ="chessborder" bgcolor="grey">a</td>
+                <td class ="chessborder" bgcolor="grey">b</td>
+                <td class ="chessborder" bgcolor="grey">c</td>
+                <td class ="chessborder" bgcolor="grey">d</td>
+                <td class ="chessborder" bgcolor="grey">e</td>
+                <td class ="chessborder" bgcolor="grey">f</td>
+                <td class ="chessborder" bgcolor="grey">g</td>
+                <td class ="chessborder" bgcolor="grey">h</td>
+                <td id ="bottomcastling" ondrop="dropfunction(event)" ondragover ="dragoverfunction(event)" class ="chessborder" bgcolor="grey"></td>
+            </tr>
+        </table>
+        <div id="btndiv">
+            <button class = "chessgamebtn" id = "pairme" onclick ="selectFunction()">Pair Me</button>
+            <!--<button style="visibility: hidden" class = "chessgamebtn" id = "makemove" onclick ="myMove()">Send My Move</button>
+            <button style="visibility: hidden" class = "chessgamebtn" id = "theirmove" onclick ="theirMove()">Get Their Move</button>-->
+            <button class = "chessgamebtn" id = "quitgame" onclick ="quitGame()">Quit Game</button>
+        </div>
+        <p id="pairmsg">Start A Game</p>
+        <p hidden id = "gameID"></p>
+        <p hidden id = "piecemovename"></p>
+        <p hidden id = "cellmovedtoname"></p>
+    </div>
+
+    <div id="GuestBook" class="tabcontent">
+        <button class = "logoutbtn" onclick ="logout()" style="visibility: hidden" id="logOut6">Logout</button>
+        <p class = "logintextclass" style="visibility: hidden" id="loginText6"></p>
+        <h1>Leave a comment</h1>
+        <form id = "formcomment" method = "post" onsubmit="return comment()">
+            <div class="txtfieldcomment">
+                <input type="comment" id = "guestcomment" placeholder="Comment" required>
+            </div>
+            <div class="txtfieldcomment">
+                <input type="username" id = "usernamecomment" placeholder="Name">
+            </div>
+            <input type = "submit" value = "Submit Comment">
+        </form>
+        <iframe id = "iframe" src="https://cws.auckland.ac.nz/gas/api/Comments" title="Guest Comments"></iframe>
+    </div>
+
+    <!-- if I add the footer here it shows on all pages so i moved it to the homepage div
+    <footer>
+        <p>Version 1.0.1</p>
+    </footer>-->
+
+    <script src = "imia307.js"></script>
+</body>
+
+</html>
